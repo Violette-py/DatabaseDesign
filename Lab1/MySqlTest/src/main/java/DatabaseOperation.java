@@ -3,8 +3,6 @@ import com.csvreader.CsvReader;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseOperation {
 
@@ -34,21 +32,31 @@ public class DatabaseOperation {
 
             while (reader.readRecord()) {
 
-                String insertSQL = "insert ignore " + tableName + "(" + columnName + ") values('" + reader.get(0) + "'";
-//                String insertSQL = "insert into " + tableName + "(" + columnName + ") values(" + reader.get(0);
-                for (int i = 1; i < columnLen - 1; i++) {
-                    insertSQL += "," + "'" + reader.get(i).replaceAll("'", "\\\\'") + "'";
+                String insertSQL = "INSERT IGNORE INTO " + tableName + " (" + columnName + ") VALUES (";
+                for (int i = 0; i < columnLen; i++) {
+                    if (i > 0) {
+                        insertSQL += ",";
+                    }
+                    insertSQL += "?"; // 使用问号作为参数占位符
                 }
-                insertSQL += "," + "'" + reader.get(columnLen - 1).replaceAll("'", "\\\\'") + "');";
+                insertSQL += ")";
 
-//                System.out.println("insertSQL : " + insertSQL);
+                // 执行参数化查询，比手动对特殊字符转义更安全，避免 SQL 注入
+                PreparedStatement preparedStatement = conn.prepareStatement(insertSQL);
+                for (int i = 0; i < columnLen; i++) {
+                    String columnValue = reader.get(i);
+                    if (columnValue.isEmpty()) {
+                        preparedStatement.setNull(i + 1, Types.VARCHAR); // 如果值为空，设置为 NULL
+                    } else {
+                        preparedStatement.setString(i + 1, columnValue); // 设置参数值
+                    }
+                }
+                preparedStatement.execute();
 
-                stmt.execute(insertSQL);
-
-                int affectedRows = stmt.getUpdateCount();
+                // 检查主键冲突，若存在则提示用户后，继续执行后续操作
+                int affectedRows = preparedStatement.getUpdateCount();
                 if (affectedRows == 0) {
-                    // 主键冲突，提示用户后继续插入
-                    System.out.println("插入失败：主键冲突" + insertSQL);
+                    System.out.println("主键冲突，未插入： " + preparedStatement.toString());  // insertSQL
                 }
             }
 
