@@ -7,16 +7,21 @@ import java.sql.Statement;
 public class InitDatabase {
     private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
     private static final String BASE_JDBC_URL = "jdbc:mysql://localhost:3306/";
-    private static final String USER_NAME = "root";
-    private static final String USER_PWD = "gansui";
+    private static final String INIT_SQL_FILE_PATH = "src/main/sql/init.sql";
+    private static String username;
+    private static String password;
 
-    public static void init() throws Exception {
+    public static void init(String in_username, String in_password) throws Exception {
+
+        // 保存用户名和密码
+        username = in_username;
+        password = in_password;
+
         Connection conn = getConn(""); // 只连接到主机，暂时未创建数据库
 
         // 读取并执行创建数据库和表的SQL文件
-        String initSQLFilePath = "src/main/sql/init.sql";
         Statement stmt = conn.createStatement();
-        executeSQLFromFile(initSQLFilePath, stmt);
+        createDatabaseAndTable(stmt);
 
         System.out.println("成功创建数据库和表");
     }
@@ -24,12 +29,11 @@ public class InitDatabase {
     public static Connection getConn(String databaseName) {
 
         String jdbcUrl = BASE_JDBC_URL + databaseName;
-        System.out.println("jdbcUrl : " + jdbcUrl);
 
         Connection conn = null;
         try {
             Class.forName(DRIVER_NAME);
-            conn = DriverManager.getConnection(jdbcUrl.trim(), USER_NAME, USER_PWD);
+            conn = DriverManager.getConnection(jdbcUrl.trim(), username, password);
             System.out.println("数据库连接成功");
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -38,9 +42,9 @@ public class InitDatabase {
         return conn;
     }
 
-    // 读取 SQL文件并执行：创建数据库 & 创建表
-    private static void executeSQLFromFile(String filePath, Statement statement) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(filePath));
+    // 读取创建数据库和创建表的 SQL文件，并执行
+    private static void createDatabaseAndTable(Statement statement) throws Exception {
+        BufferedReader br = new BufferedReader(new FileReader(INIT_SQL_FILE_PATH));
         String line;
         StringBuilder sqlStatement = new StringBuilder();
 
