@@ -19,27 +19,12 @@
             <version>5.5.1</version>
         </dependency>
 
-
-        <!--    <dependency>-->
-        <!--        <groupId>com.opencsv</groupId>-->
-        <!--        <artifactId>opencsv</artifactId>-->
-        <!--        <version>4.4</version>-->
-        <!--    </dependency>-->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>1.9</version>
+        </dependency>
 
     </dependencies>
 
-    <!--    <build>-->
-    <!--        <plugins>-->
-    <!--            <plugin>-->
-    <!--                <groupId>org.apache.maven.plugins</groupId>-->
-    <!--                <artifactId>maven-compiler-plugin</artifactId>-->
-    <!--                <version>3.8.1</version>-->
-    <!--                <configuration>-->
-    <!--                    &lt;!&ndash;根据个人需要自己修改&ndash;&gt;-->
-    <!--                    <source>13</source>-->
-    <!--                    <target>13</target>-->
-    <!--                </configuration>-->
-    <!--            </plugin>-->
-    <!--        </plugins>-->
-    <!--    </build>-->
 </project>

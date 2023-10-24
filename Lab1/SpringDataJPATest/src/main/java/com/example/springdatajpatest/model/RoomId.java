@@ -1,10 +1,12 @@
 package com.example.springdatajpatest.model;
 
+import jakarta.persistence.Embeddable;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
+@Embeddable  // 复合主键
 public class RoomId implements Serializable {
     private Integer kdno;
     private Integer kcno;
@@ -18,32 +20,5 @@ public class RoomId implements Serializable {
         this.kcno = kcno;
         this.ccno = ccno;
     }
-
-//    public Integer getKdno() {
-//        return kdno;
-//    }
-//
-//    public Integer getKcno() {
-//        return kcno;
-//    }
-//
-//    public Integer getCcno() {
-//        return ccno;
-//    }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        RoomId that = (RoomId) o;
-//        return Objects.equals(kdno, that.kdno) &&
-//                Objects.equals(kcno, that.kcno) &&
-//                Objects.equals(ccno, that.ccno);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(kdno, kcno, ccno);
-//    }
 }
 

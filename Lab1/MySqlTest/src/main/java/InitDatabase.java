@@ -6,18 +6,26 @@ import java.sql.Statement;
 
 public class InitDatabase {
     private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
-    private static final String BASE_JDBC_URL = "jdbc:mysql://localhost:3306/";
     private static final String INIT_SQL_FILE_PATH = "src/main/sql/init.sql";
+
+    // 数据库配置参数
+    private static String dbHost;
+    private static int dbPort;
     private static String username;
     private static String password;
+    private static String baseJdbcUrl;
 
-    public static void init(String in_username, String in_password) throws Exception {
+    public static void init(String in_dbHost, int in_dbPort, String in_username, String in_password) throws Exception {
 
-        // 保存用户名和密码
+        // 保存配置信息
+        dbHost = in_dbHost;
+        dbPort = in_dbPort;
         username = in_username;
         password = in_password;
+        baseJdbcUrl = "jdbc:mysql://" + dbHost + ":" + dbPort + "/";
 
-        Connection conn = getConn(""); // 只连接到主机，暂时未创建数据库
+        // 连接数据库服务器
+        Connection conn = getConn("");
 
         // 读取并执行创建数据库和表的SQL文件
         Statement stmt = conn.createStatement();
@@ -28,7 +36,7 @@ public class InitDatabase {
 
     public static Connection getConn(String databaseName) {
 
-        String jdbcUrl = BASE_JDBC_URL + databaseName;
+        String jdbcUrl = baseJdbcUrl + databaseName;
 
         Connection conn = null;
         try {

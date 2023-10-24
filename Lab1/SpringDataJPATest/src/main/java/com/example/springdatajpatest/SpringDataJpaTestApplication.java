@@ -20,8 +20,8 @@ public class SpringDataJpaTestApplication {
     @Bean
     public CommandLineRunner demo() {
         return (args) -> {
-            databaseService.insertRoomDataFromCsv();
-            databaseService.insertStudentDataFromCsv();
+            databaseService.insertDataFromCsv("room");
+            databaseService.insertDataFromCsv("student");
         };
     }
 

@@ -5,16 +5,20 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
 public class Room {
     @EmbeddedId
-    RoomId roomId;
+    RoomId roomId;  // 复合主键
     private String kdname;
     private String exptime;
     private String papername;
 
     public Room() {
+    }
+
+    public Room(Integer kdno, Integer kcno, Integer ccno) {
+        this.roomId = new RoomId(kdno, kcno, ccno);
     }
 
     public Room(Integer kdno, Integer kcno, Integer ccno, String kdname, String exptime, String papername) {
