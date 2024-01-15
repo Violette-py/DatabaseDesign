@@ -1,1 +1,1 @@
-A project of price comparison system
+# A project of price comparison system
