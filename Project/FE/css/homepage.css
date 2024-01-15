@@ -1,0 +1,116 @@
+/* homepage.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    /* background-color: #eff4c9; */
+}
+
+#top-bar {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+#logo-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#user-greeting {
+    font-size: 16px;
+}
+
+#search-bar {
+    padding: 20px;
+    text-align: center;
+}
+
+#search-input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#search-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+
+
+
+#product-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Optional: Adjust alignment as needed */
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 20px); /* 20% width for each item with 20px margin */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex;
+    flex-direction: column; /* Stack image and info vertically */
+}
+
+
+.product-info {
+    flex-grow: 1; /* Allow info to take remaining space */
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+/* Add the following CSS to homepage.css */
+.product-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+button {
+    /* display: inline-block; */
+ 
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db; /* Button border color */
+    color: #3498db; /* Button text color */
+    background-color: #fff; /* Button background color */
+    border-radius: 5px; /* Button border radius */
+    transition: background-color 0.3s, color 0.3s; /* Transition effect for hover */
+}
+
+/* Button Hover State */
+button:hover {
+    background-color: #3498db; /* Hover background color */
+    color: #fff; /* Hover text color */
+}
+a {
+    display: inline;
+    text-decoration: none; /* Remove underline */
+    color: #3498db; 
+    padding: 5px 10px; /* Add padding for better clickable area */
+    border: 1px solid #333; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #fff; /* Set background color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add smooth transition effect */
+}
+
+a:hover {
+    background-color: #3498db; 
+    color: #fff; /* Change text color on hover */
+}

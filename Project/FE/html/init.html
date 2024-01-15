@@ -1,0 +1,53 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin/admin.css">
+    <title>Admin Page</title>
+</head>
+<body>
+    <div id="admin-header">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="admin-greeting">Hello, 管理员root</div>
+        <button onclick="logout()">Log out</button>
+    </div>
+
+    <div id="admin-container">
+        <div id="admin-sidebar">
+            <ul>
+                <li>
+                    <a href="init.html">系统初始化</a>
+                </li>
+                <li>
+                    <a href="admin.html">用户管理</a>
+                </li>
+                <li>
+                    <a href="vendorManage.html">商家管理</a>
+                </li>
+                <li>
+                    <a href="commodityManage.html">商品管理</a>
+                </li>
+                <li>
+                    <a href="saleCommodityManage.html">上架商品管理</a>
+                </li>
+                <li>
+                    <a href="platformManage.html">平台管理</a>
+                </li>
+            </ul>
+        </div>
+        <div id="admin-content">
+            <button onclick="initVendor()">导入商家</button>
+            <button onclick="initPlatform()">导入平台</button>
+            <button onclick="initCommodity()">导入商品</button>
+            <button onclick="initSaleCommodity()">导入上架商品</button>
+            <button onclick="initHistoryPrice()">导入历史价格</button>
+            
+        </div>
+    </div>
+    <script src="../js/init.js"></script>
+    <script src="../js/logout.js"></script>
+
+</body>
+</html>

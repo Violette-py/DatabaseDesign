@@ -1,0 +1,105 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin/admin.css">
+    <link rel="stylesheet" href="../css/saleCommodity.css">
+    <title>Admin Page</title>
+</head>
+<body>
+    <div id="admin-header">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="admin-greeting">Hello, 管理员root</div>
+        <button onclick="logout()">Log out</button>
+    </div>
+
+    <div id="admin-container">
+        <div id="admin-sidebar">
+            <ul>
+                <li>
+                    <a href="#" onclick="initializeSystem()">系统初始化</a>
+                </li>
+                <li>
+                    <a href="admin.html">用户管理</a>
+                </li>
+                <li>
+                    <a href="vendorManage.html">商家管理</a>
+                </li>
+                <li>
+                    <a href="commodityManage.html">商品管理</a>
+                </li>
+                <li>
+                    <a href="saleCommodityManage.html">上架商品管理</a>
+                </li>
+                <li>
+                    <a href="platformManage.html">平台管理</a>
+                </li>
+            </ul>
+        </div>
+        <div id="admin-content">
+            <h2>saleCommodity Management</h2>
+            <div id="saleCommodity-items-container">
+        
+            </div>
+            <div id="pagination-container"></div>
+        
+           <!-- Button to show the form -->
+           <button onclick="showAddSaleCommodityForm()">+</button>
+
+           <!-- Form to add SaleCommodity -->
+           <div id="add-saleCommodity-form" style="display: none;">
+           
+               <form id="add-saleCommodity-form" onsubmit="addSaleCommodity(event);">
+                   <!-- Input fields for SaleCommodity information -->
+                   <label for="saleCommodityName">Name:</label>
+                   <input type="text" id="saleCommodityName" name="saleCommodityName" required>
+
+                   <label for="saleCommodityDate">Date:</label>
+                   <input type="date" id="saleCommodityDate" name="saleCommodityDate" required>
+
+                   <label for="saleCommodityPlace">Place:</label>
+                   <input type="text" id="saleCommodityPlace" name="saleCommodityPlace" required>
+
+                   <label for="saleCommodityPrice">Price:</label>
+                   <input type="number" id="saleCommodityPrice" name="saleCommodityPrice" required>
+
+                   <label for="saleCommodityDescription">Description:</label>
+                   <textarea id="saleCommodityDescription" name="saleCommodityDescription" required></textarea>
+
+                   <!-- Display vendors as checkboxes -->
+                   <div class="dropdown">
+                       <label>Vendors:</label>
+                       <div id="vendor-list">
+                           <!-- Vendor information will be displayed here -->
+                       </div>
+                   </div>
+
+                   <!-- Display platforms as checkboxes -->
+                   <div class="dropdown">
+                       <label>Platforms:</label>
+                       <div id="platform-list">
+                           <!-- Platform information will be displayed here -->
+                       </div>
+                   </div>
+
+                   <div class="dropdown">
+                    <label>Commodities:</label>
+                    <div id="commodity-list">
+                        <!-- Platform information will be displayed here -->
+                    </div>
+                </div>
+
+
+                   <button type="submit">Add SaleCommodity</button>
+               </form>
+           </div>
+        </div>
+    </div>
+    <script src="../js/saleCommodity.js"></script>
+    <script src="../js/logout.js"></script>
+
+
+</body>
+</html>

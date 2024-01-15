@@ -1,0 +1,47 @@
+<!-- user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/user.css">
+    <title>User Page</title>
+</head>
+<body>
+    <div id="top-bar">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="user-greeting">Hello, 用户</div>
+        <a id="homeLink" href="home.html">回到首页</a>
+    </div>
+
+    <div id="user-profile-container">
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <a href="#" onclick="showAccountPage()">查看账户</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showMessagesPage()">我的消息</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showFavoritesPage()">我的收藏</a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="account-page">
+            
+            </div>
+            <div id="messages-page">
+               
+            </div>
+            <div id="favorites-page">
+                
+            </div>
+            <div id="pagination"></div>
+        </div>
+    </div>
+    <script src="../js/user.js"></script>
+</body>
+</html>

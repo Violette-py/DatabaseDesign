@@ -1,0 +1,157 @@
+/* user.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#top-bar {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+#logo-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#user-greeting {
+    font-size: 16px;
+}
+
+#user-profile-container {
+    display: flex;
+    height: 90vh;
+}
+
+#sidebar {
+    background-color: #2c7baf;
+    color: #fff;
+    width: 130px;
+    padding: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar li {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#sidebar a:hover {
+    color: #f39c12;
+}
+
+#content {
+    flex: 1;
+    padding: 20px;
+}
+
+
+
+.selected {
+    border: 2px solid #3c97e7;
+}
+
+#homeLink{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db; /* Button border color */
+    color: #3498db; /* Button text color */
+    background-color: #fff; /* Button background color */
+    border-radius: 5px; /* Button border radius */
+    transition: background-color 0.3s, color 0.3s; /* Transition effect for hover */
+}
+#homeLink :hover{
+    background-color: #3498db; /* Hover background color */
+    color: #fff; /* Hover text color */
+
+}
+/* 在你的 user.css 文件中添加以下样式 */
+
+#favorites-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Optional: Adjust alignment as needed */
+}
+
+.favorite-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(48% - 20px); /* 48% width for each item with 20px margin (2 items per row) */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex;
+    flex-direction: column; /* Stack image and info vertically */
+}
+
+.favorite-item p {
+    margin: 5px 0;
+}
+
+.favorite-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.favorite-item a:hover {
+    background-color: #2980b9;
+}
+
+/* Add the following CSS to homepage.css */
+.favorite-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* 在你的 user.css 文件中添加以下样式 */
+
+#messages-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Optional: Adjust alignment as needed */
+}
+
+.message-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(48% - 20px); /* 48% width for each item with 20px margin (2 items per row) */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.message-item p {
+    margin: 5px 0;
+}
+
+/* Add the following CSS to homepage.css */
+.message-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

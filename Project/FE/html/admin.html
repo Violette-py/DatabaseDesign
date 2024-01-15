@@ -1,0 +1,76 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin/admin.css">
+    <title>Admin Page</title>
+</head>
+<body>
+    <div id="admin-header">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="admin-greeting">Hello, 管理员root</div>
+        <button onclick="logout()">Log out</button>
+    </div>
+
+    <div id="admin-container">
+        <div id="admin-sidebar">
+            <ul>
+                <li>
+                    <a href="init.html">系统初始化</a>
+                </li>
+                <li>
+                    <a href="admin.html">用户管理</a>
+                </li>
+                <li>
+                    <a href="vendorManage.html">商家管理</a>
+                </li>
+                <li>
+                    <a href="commodityManage.html">商品管理</a>
+                </li>
+                <li>
+                    <a href="saleCommodityManage.html">上架商品管理</a>
+                </li>
+                <li>
+                    <a href="platformManage.html">平台管理</a>
+                </li>
+            </ul>
+        </div>
+        <div id="admin-content">
+            <h2>User Management</h2>
+            <div id="user-items-container">
+        
+            </div>
+            <div id="pagination-container"></div>
+            <!-- Add more user items as needed -->
+
+            <button onclick="showAddUserForm()">+</button>
+            <div id="add-user-form" style="display: none;">
+                <h2>Add User</h2>
+                <form id="add-user-form" onsubmit="addUser(event);">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+
+                    <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="Male" selected>Male</option>
+                     <option value="Female">Female</option>
+            </select>
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <button type="submit">Add User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/admin.js"></script>
+    <script src="../js/logout.js"></script>
+
+</body>
+</html>

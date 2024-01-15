@@ -1,0 +1,93 @@
+<!-- vendor.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/saleCommodity.css">
+    <title>Vendor Page</title>
+</head>
+<body>
+    <div id="top-bar">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="vendor-greeting">Hello, 商家</div>
+        <button onclick="logout()">Log out</button>
+    </div>
+
+    <div id="vendor-profile-container">
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <a href="#" onclick="showAccountPage()">查看账户</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showManageProductsPage()">管理商品</a>
+                </li>
+            </ul>
+        </div>
+       
+        <div id="content">
+              
+                <div id="saleCommodity-items-container">
+            
+                </div>
+                <div id="pagination-container"></div>
+            
+               <!-- Button to show the form -->
+               <button onclick="showAddSaleCommodityForm()">+</button>
+    
+               <!-- Form to add SaleCommodity -->
+               <div id="add-saleCommodity-form" style="display: none;">
+               
+                   <form id="add-saleCommodity-form" onsubmit="addSaleCommodity(event);">
+                       <!-- Input fields for SaleCommodity information -->
+                       <label for="saleCommodityName">Name:</label>
+                       <input type="text" id="saleCommodityName" name="saleCommodityName" required>
+    
+                       <label for="saleCommodityDate">Date:</label>
+                       <input type="date" id="saleCommodityDate" name="saleCommodityDate" required>
+    
+                       <label for="saleCommodityPlace">Place:</label>
+                       <input type="text" id="saleCommodityPlace" name="saleCommodityPlace" required>
+    
+                       <label for="saleCommodityPrice">Price:</label>
+                       <input type="number" id="saleCommodityPrice" name="saleCommodityPrice" required>
+    
+                       <label for="saleCommodityDescription">Description:</label>
+                       <textarea id="saleCommodityDescription" name="saleCommodityDescription" required></textarea>
+    
+                       <!-- Display vendors as checkboxes -->
+                       <div class="dropdown">
+                           <label>Vendors:</label>
+                           <div id="vendor-list">
+                               <!-- Vendor information will be displayed here -->
+                           </div>
+                       </div>
+    
+                       <!-- Display platforms as checkboxes -->
+                       <div class="dropdown">
+                           <label>Platforms:</label>
+                           <div id="platform-list">
+                               <!-- Platform information will be displayed here -->
+                           </div>
+                       </div>
+    
+                       <div class="dropdown">
+                        <label>Commodities:</label>
+                        <div id="commodity-list">
+                            <!-- Platform information will be displayed here -->
+                        </div>
+                    </div>
+    
+    
+                       <button type="submit">Add SaleCommodity</button>
+                   </form>
+               
+            </div>
+        </div>
+    </div>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+</html>

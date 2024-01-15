@@ -1,0 +1,54 @@
+<!-- user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/report.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+
+    <title>Report Page</title>
+</head>
+<body>
+    <div id="top-bar">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="user-greeting">年度报告大赏</div>
+        <a id="homeLink" href="home.html">回到首页</a>
+    </div>
+
+    <div id="user-profile-container">
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <a href="#" onclick="showDistribution()">商品收藏分布</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showTopSaleCommodities()">Top3最热商品</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showTopPlatforms()">Top3最热平台</a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="distribution-page">
+            
+            </div>
+            <div id="saleCommodities-page">
+               
+            </div>
+            <div id="platforms-page">
+                
+            </div>
+        
+        </div>
+    </div>
+    <!-- Add these links in the head section of your HTML file -->
+
+
+    <script src="../js/report.js"></script>
+</body>
+</html>

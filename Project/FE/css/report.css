@@ -1,0 +1,48 @@
+/* Add this CSS in your existing CSS file or create a new one */
+
+.simple-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.simple-table th, .simple-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.simple-table th {
+    background-color: #f2f2f2;
+}
+#product-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Optional: Adjust alignment as needed */
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 20px); /* 20% width for each item with 20px margin */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex;
+    flex-direction: column; /* Stack image and info vertically */
+}
+
+
+.product-info {
+    flex-grow: 1; /* Allow info to take remaining space */
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+/* Add the following CSS to homepage.css */
+.product-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

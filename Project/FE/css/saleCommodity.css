@@ -1,0 +1,53 @@
+/* saleCommodity.css */
+/* 新增或修改样式 */
+.saleCommodity-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 48%; /* 控制每个大的 saleCommodity 盒子宽度 */
+    display: inline-block; /* 允许一行放两个 saleCommodity 盒子 */
+    margin-right: 1%; /* 为了在两个盒子之间添加间隔 */
+    box-sizing: border-box; /* 包含边框在内的盒模型 */
+}
+
+.saleCommodity-buttons button {
+    margin-right: 10px;
+    margin-bottom: 10px; /* 添加按钮之间的垂直间隔 */
+}
+
+.saleCommodity-item-row {
+    display: inline-block;
+    /* justify-content: space-between; */
+    width: 48%; /* 使每个 saleCommodity-item-row 占据父容器的 48% 宽度，可以根据需要调整 */
+}
+/* Style for buttons */
+.saleCommodity-buttons {
+    margin-top: 10px;
+}
+
+/* Style for the modify button */
+.modify-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style for the delete button */
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Add more styles as needed */
+.dropdown{
+    display: inline-block;
+    /* justify-content: space-between; */
+    width: 48%;
+}

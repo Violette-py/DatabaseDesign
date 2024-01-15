@@ -1,0 +1,29 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/product.css">
+    <title>Product Details</title>
+</head>
+<body>
+    <div id="product-details">
+        <div class="product-image">
+            <img src="../resources/平板.jpg" alt="Apple iPad">
+        </div>
+        <div class="product-info">
+            <h2>Apple iPad</h2>
+            <p><strong>Price:</strong> $10.99</p>
+            <p><strong>Store:</strong> Ipad Mini</p>
+            <p><strong>Platform:</strong> OnlineMart</p>
+            <p><strong>Production Date:</strong> January 1, 2023</p>
+            <p><strong>Origin:</strong> Factory A</p>
+            <h3>Price History</h3>
+            <canvas id="price-chart"></canvas> <!-- Make sure it is a canvas element -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/priceChart.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#product-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* Adjust the top margin as needed */
+}
+
+.product-image {
+    max-width: 40%; /* Set a maximum width for the image container */
+    max-height: 40vh; /* Set a maximum height for the image container */
+}
+
+.product-image img {
+    width: 100%; /* Make the image fill its container */
+    height: 100%; /* Make the image fill its container */
+    object-fit: contain; /* Maintain aspect ratio and fit within the container */
+    display: block; /* Remove extra space below inline images */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.product-info {
+    padding: 20px;
+    max-width: 600px; /* Set a maximum width for the product information */
+}

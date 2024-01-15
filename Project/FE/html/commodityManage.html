@@ -1,0 +1,72 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin/admin.css">
+    <title>Admin Page</title>
+</head>
+<body>
+    <div id="admin-header">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="admin-greeting">Hello, 管理员root</div>
+        <button onclick="logout()">Log out</button>
+    </div>
+
+    <div id="admin-container">
+        <div id="admin-sidebar">
+            <ul>
+                <li>
+                    <a href="#" onclick="initializeSystem()">系统初始化</a>
+                </li>
+                <li>
+                    <a href="admin.html">用户管理</a>
+                </li>
+                <li>
+                    <a href="vendorManage.html">商家管理</a>
+                </li>
+                <li>
+                    <a href="commodityManage.html">商品管理</a>
+                </li>
+                <li>
+                    <a href="saleCommodityManage.html">上架商品管理</a>
+                </li>
+                <li>
+                    <a href="platformManage.html">平台管理</a>
+                </li>
+            </ul>
+        </div>
+        <div id="admin-content">
+            <h2>Commodity Management</h2>
+            <div id="commodity-items-container">
+        
+            </div>
+            <div id="pagination-container"></div>
+            <!-- Add more user items as needed -->
+
+        <button onclick="showCommodityForm()">+</button>
+           
+        <div id="add-commodity-form" style="display: none;">
+            <h2>Add Commodity</h2>
+            <form onsubmit="addCommodity(event);">
+            <!-- Add commodity form fields here -->
+            <!-- Example: -->
+            <label for="commodity-name">Name:</label>
+            <input type="text" id="commodity-name" name="commodity-name" required>
+
+            <label for="commodity-category">Category:</label>
+            <input type="text" id="commodity-category" name="commodity-category" required>
+
+            <!-- Add more commodity form fields as needed -->
+
+            <button type="submit">Add Commodity</button>
+        </form>
+    </div>
+        </div>
+    </div>
+    <script src="../js/commodityManage.js"></script>
+    <script src="../js/logout.js"></script>
+
+</body>
+</html>

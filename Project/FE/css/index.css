@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #eff7c4;
+}
+
+#quarter-circle-top-left,
+#quarter-circle-bottom-right {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 1;
+}
+
+#quarter-circle-top-left {
+    border-width: 200px 200px 0 0;
+    border-color:#2685c5 transparent transparent transparent;
+    top: 0;
+    left: 0;
+}
+
+#quarter-circle-bottom-right {
+    border-width: 0 0 200px 200px;
+    border-color: transparent transparent #2685c5 transparent;
+    bottom: 0;
+    right: 0;
+}
+
+#quarter-circle-text {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 其他样式保持不变 */
+
+#login-container {
+    position: relative;
+    top:150px;
+    left:300px;
+    width: 800px;
+    height: 420px;
+    background-color: rgba(242, 206, 114, 0.5);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    border-radius: 10px;
+}
+
+#left-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#right-section {
+    flex: 1;
+    background-image: url('../resources/logo.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 10px;
+}
+
+#login-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+button {
+    width: 50%;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #3c97e7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}

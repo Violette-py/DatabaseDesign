@@ -1,0 +1,79 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the search results container */
+#product-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Style for each product item */
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    width: 85%; /* Set width to 100% to occupy the full width of the container */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+/* Style for the product full info container */
+.product--full-info {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Add space between product-info and price-history-box */
+    width: 80%; /* Occupy the full width of the product-item */
+    margin-bottom: 5px;
+}
+
+/* Style for the product info container */
+.product-info {
+    /* 设置宽度、边框等样式 */
+    width: 30%; /* Adjust the width as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.product-info > div {
+    /* 设置子元素的样式，例如间距等 */
+    margin-bottom: 8px;
+}
+
+/* Style for the price history box container */
+.price-history-box {
+    /* 设置宽度、边框等样式 */
+    width: 30%; /* Adjust the width as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.price-history-box > div {
+    /* 设置子元素的样式，例如间距等 */
+    margin-bottom: 8px;
+}
+
+
+/* Style for the search bar */
+#search-bar {
+    margin-top: 20px;
+}
+
+/* Style for the platform checkboxes */
+#search-range {
+    margin-top: 10px;
+}
+
+/* Style for the time range dropdown */
+#time-range-select {
+    margin-top: 10px;
+}

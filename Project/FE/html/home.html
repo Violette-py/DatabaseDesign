@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <div id="top-bar">
+        <div id="logo-text">拼便宜比价系统</div>
+        <div id="user-greeting">Hello, 用户</div>
+        <a href="report.html">年度报告</a>
+        <a href="user.html">我的</a>
+
+        <button onclick="logout()">Log out</button>
+      
+    </div>
+
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Search for products...">
+        <button id="search-button" onclick="searchProducts()">🔍</button>
+    </div>
+ 
+       
+    <div id="product-display">
+        <div class="product-item">
+           
+            <div class="product-info">
+              
+            </div>
+        </div>
+ 
+    </div>
+
+    <button id="next-batch-button" onclick="loadNextBatch()">换一批</button>
+    <script src="../js/home.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+</html>
